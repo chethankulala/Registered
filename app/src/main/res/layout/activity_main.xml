@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="registerViewModel"
+            type="com.example.registered.viewmodel.RegisterViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="279dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="124dp"
+            android:layout_marginEnd="41dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Name"
+            android:drawablePadding="15dp"
+            android:drawableLeft="@drawable/user"
+            android:textColorHint="@color/textcolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@={registerViewModel.name}"/>
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="279dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="41dp"
+            android:drawableLeft="@drawable/locked"
+            android:drawablePadding="13dp"
+            android:ems="10"
+            android:hint="Password"
+            android:textColorHint="@color/textcolor"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            android:text="@={registerViewModel.pass}"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="279dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="41dp"
+            android:ems="10"
+            android:drawablePadding="8dp"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:textColorHint="@color/textcolor"
+            android:drawableLeft="@drawable/email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
+            android:text="@={registerViewModel.email}"/>
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="279dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="40dp"
+            android:drawableLeft="@drawable/phonecall"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="41dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:drawablePadding="8dp"
+            android:hint="Registered mobile number"
+            android:textColorHint="@color/textcolor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:text="@={registerViewModel.phone}"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="279dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="41dp"
+            android:background="@drawable/shape"
+            android:text="REGISTER"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pass"
+            app:layout_constraintVertical_bias="0.0"
+            android:onClick="@{()->registerViewModel.registerOnClick()}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
